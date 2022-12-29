@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block title %}Edit movie{% endblock %} {% block
+main %}
+<h1 class="title">Register</h1>
+
+<form action="" method="post" name="movie_edit">
+  <div class="field">
+    <label for="usename" class="label">Username</label>
+    <div class="control">
+      <input type="text" name="username" class="input" required="required" />
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="password" class="label">Password</label>
+    <div class="control">
+      <input
+        type="password"
+        name="password"
+        class="input"
+        min="{{ min_year }}"
+        max="{{ max_year }}"
+      />
+    </div>
+  </div>
+  <div class="field">
+    <label for="confirmation" class="label">Password confirmation</label>
+    <div class="control">
+      <input
+        type="password"
+        name="confirmation"
+        class="input"
+        min="{{ min_year }}"
+        max="{{ max_year }}"
+      />
+    </div>
+  </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-primary is-small">register</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

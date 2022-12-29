@@ -1,0 +1,24 @@
+{
+  "configurations": [
+
+    {
+      "name": "Python: Flask",
+      "type": "python",
+      "request": "launch",
+      "module": "flask", 
+      "env": {
+        "FLASK_APP": "finance/app.py",
+        "FLASK_DEBUG": "1",
+        "API_KEY":"pk_258dfa66ecf6475da9764037b5b0cd55"
+      },
+      "args": [
+        "run",
+        "--no-debugger",
+        "--no-reload"
+      ],
+      "jinja": true,
+      "justMyCode": true,
+     
+    }
+  ]
+}

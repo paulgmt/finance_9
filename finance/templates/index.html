@@ -1,0 +1,60 @@
+{% extends "layout.html" %} {% block title %} profile {% endblock %} {% block
+main %}
+<div class="col-xl-3 col-sm-6">
+  <div class="row justify-content-start bg-white rounded shadow-sm">
+   <div class="col-lg-12 text-center d-flex justify-content-start" >
+       <img
+      src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg"
+      alt=""
+      width="`100"
+      class="img-fluid img-thumbnail shadow-sm w-25"
+    />
+   </div>
+   
+    <div class="col-lg-12">
+      <div class="col-lg-4 text-start"> <h5>{{user.username}}  </h5></div>
+      <div class="col-lg-4 text-start"><span class="small text-uppercase text-muted"
+      >Balance: {{usd(user.cash)}}</span> </div>
+      
+    </div>
+  </div>
+</div>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">SYMBOL</th>
+      <th scope="col">NAME</th>
+      <th scope="col">SHARES</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stocks %}
+
+    <tr>
+      <!-- <td scope="row">{{idx}}</th>
+       {% for val in stock %}
+       <td scope="row">{{val}}</th>
+         {% endfor %}
+      </tr> -->
+      <td>{{stock["symbol"]}}</td>
+      <td>{{stock["name"]}}</td>
+      <td>{{stock["total_shares"]}}</td>
+      <td>{{usd(stock["price"])}}</td>
+      <td>{{usd(stock["total_shares"] * stock["price"])}}</td>
+      {% endfor %}
+    </tr>
+
+    <tr>
+      <td>CASH</td>
+      <td colspan="3"></td>
+      <td>{{usd(cash)}}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <td colspan="4"></td>
+    <td><strong>{{usd(total)}}</strong></td>
+  </tfoot>
+</table>
+{% endblock %}

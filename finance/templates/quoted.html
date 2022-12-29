@@ -1,0 +1,48 @@
+{% extends "layout.html" %} {% block title %} Quoted {% endblock %} {% block
+main %}
+<!-- https://memegen.link/ -->
+<div class="row justify-content-center border bordero-back">
+  <div class="col-lg-6 p-4">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">
+          <i class="fa-sharp fa-solid fa-money-bill-trend-up"></i> {{name}}
+          stock price :
+        </h5>
+        <ul class="list-group">
+          <li
+            class="list-group-item list-group-item-action list-group-item-primary justify-content-start"
+          >
+            <div class="row justify-content-start">
+              <div class="col-lg-2">
+                <i class="fa-sharp fa-solid fa-building"></i>
+              </div>
+              <div class="col-md-8">name: {{name}}</div>
+            </div>
+          </li>
+          <li
+            class="list-group-item list-group-item-action list-group-item-primary"
+          >
+            <div class="row justify-content-start">
+              <div class="col-lg-2">
+                <i class="fa-sharp fa-solid fa-dollar"></i>
+              </div>
+              <div class="col-md-8">price: {{price}}</div>
+            </div>
+          </li>
+          <li
+            class="list-group-item list-group-item-action list-group-item-primary"
+          >
+            <div class="row justify-content-start">
+              <div class="col-lg-2">
+                <i class="fa-sharp fa-solid fa-pen"></i>
+              </div>
+              <div class="col-md-8">symbol: {{symbol}}</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
